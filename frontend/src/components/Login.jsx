@@ -21,7 +21,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e?.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/auth/login", {
+      const response = await axios.post("https://habito-rzwt.onrender.com/auth/login", {
         email,
         password,
         role
@@ -140,7 +140,7 @@ const Login = () => {
               </div>
               <div className="login-center-buttons">
                 <button type="button" onClick={handleLogin}>Log In</button>
-                <button type="button" onClick={() => { window.location.href = "http://localhost:5000/auth/google"; }}>
+                <button type="button" onClick={() => { window.location.href = "https://habito-rzwt.onrender.com/auth/login"; }}>
                   <img src={GoogleSvg} alt="" />
                   Log In with Google
                 </button>
