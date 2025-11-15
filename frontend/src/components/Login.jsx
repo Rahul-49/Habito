@@ -140,7 +140,7 @@ const Login = () => {
               </div>
               <div className="login-center-buttons">
                 <button type="button" onClick={handleLogin}>Log In</button>
-                <button type="button" onClick={() => { window.location.href = "https://habito-rzwt.onrender.com/auth/login"; }}>
+                <button type="button" onClick={() => { window.location.href = "https://habito-rzwt.onrender.com/auth/google"; }}>
                   <img src={GoogleSvg} alt="" />
                   Log In with Google
                 </button>
