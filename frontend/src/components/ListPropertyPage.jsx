@@ -55,7 +55,7 @@ const ListPropertyPage = () => {
         setGenLoading(false);
         return;
       }
-      const res = await fetch("http://localhost:5000/ai/describe", {
+      const res = await fetch("https://habito-rzwt.onrender.com/ai/describe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, location, area, price })
@@ -186,7 +186,7 @@ const ListPropertyPage = () => {
       });
 
       const token = localStorage.getItem('token');
-      const response = await axios.post("http://localhost:5000/properties", formDataToSend, {
+      const response = await axios.post("https://habito-rzwt.onrender.com/properties", formDataToSend, {
         headers: {
           // Let the browser set the proper multipart/form-data boundary
           'Authorization': `Bearer ${token}`
