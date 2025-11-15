@@ -131,7 +131,7 @@ const [genLoading, setGenLoading] = useState(false);
         }
 
         // Fetch all properties then select the one matching id
-        const res = await fetch("http://localhost:5000/properties");
+        const res = await fetch("https://habito-rzwt.onrender.com/properties");
         if (!res.ok) throw new Error('Failed to fetch');
         const list = await res.json();
         const found = (list || []).find((p) => p._id === propertyId);
@@ -145,7 +145,7 @@ const [genLoading, setGenLoading] = useState(false);
         const token = localStorage.getItem('token');
         if (token) {
           try {
-            const favRes = await fetch("http://localhost:5000/user/getUserFavourite", { headers: { Authorization: `Bearer ${token}` } });
+            const favRes = await fetch("https://habito-rzwt.onrender.com/user/getUserFavourite", { headers: { Authorization: `Bearer ${token}` } });
             if (favRes.ok) {
               const favData = await favRes.json();
               const isFav = (favData || []).some((f) => f._id === propertyId);
@@ -201,8 +201,8 @@ const [genLoading, setGenLoading] = useState(false);
       }
 
       const url = isFavorite 
-        ? `http://localhost:5000/user/removeUserFavourite/${property._id}`
-        : "http://localhost:5000/user/addUserFavourite";
+        ? `https://habito-rzwt.onrender.com/user/removeUserFavourite/${property._id}`
+        : "https://habito-rzwt.onrender.com/user/addUserFavourite";
 
       const response = await fetch(url, options);
       
@@ -243,7 +243,7 @@ const [genLoading, setGenLoading] = useState(false);
         setGenLoading(false);
         return;
       }
-      const res = await fetch("http://localhost:5000/ai/summarize", {
+      const res = await fetch("https://habito-rzwt.onrender.com/ai/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, location, area, price })
@@ -292,7 +292,7 @@ const [genLoading, setGenLoading] = useState(false);
         ...(features && { features: Array.isArray(features) ? features : [features] })
       };
 
-      const res = await fetch("http://localhost:5000/ai/summarize", {
+      const res = await fetch("https://habito-rzwt.onrender.com/ai/summarize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
