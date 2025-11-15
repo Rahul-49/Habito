@@ -228,7 +228,7 @@ const AdminPanel = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/properties", {
+      const res = await fetch("https://habito-rzwt.onrender.com/properties", {
         headers: token ? { Authorization: `Bearer ${token}` } : {}
       });
       
@@ -247,7 +247,7 @@ const AdminPanel = () => {
     setActionLoading(propertyId);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/properties/${propertyId}/verify`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/properties/${propertyId}/verify`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -286,7 +286,7 @@ const AdminPanel = () => {
     setActionLoading(propertyId);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/properties/${propertyId}`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/properties/${propertyId}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`
@@ -337,7 +337,7 @@ const AdminPanel = () => {
         return;
       }
 
-      const res = await fetch("http://localhost:5000/properties");
+      const res = await fetch("https://habito-rzwt.onrender.com/properties");
       if (!res.ok) throw new Error("Failed to fetch");
       const list = await res.json();
       const found = (list || []).find(p => p._id === propertyId);
