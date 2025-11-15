@@ -49,7 +49,7 @@ const PropertiesPage = () => {
     if (!reportFor) return;
     try {
       setReportSubmitting(true);
-      const res = await fetch("http://localhost:5000/issues", {
+      const res = await fetch("https://habito-rzwt.onrender.com/issues", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -82,7 +82,7 @@ const PropertiesPage = () => {
 
     const fetchProps = async (paramsFromUrl) => {
       try {
-        let apiUrl = "http://localhost:5000/properties?";
+        let apiUrl = "https://habito-rzwt.onrender.com/properties?";
         const params = paramsFromUrl || {};
         
         if (params.location) {
@@ -102,7 +102,7 @@ const PropertiesPage = () => {
         const token = localStorage.getItem('token');
         if (token) {
           try {
-            const favRes = await fetch("http://localhost:5000/user/getUserFavourite", {
+            const favRes = await fetch("https://habito-rzwt.onrender.com/user/getUserFavourite", {
               headers: { Authorization: "Bearer " + token }
             });
             if (favRes.ok) {
@@ -260,7 +260,7 @@ const PropertiesPage = () => {
     window.history.replaceState({}, "", next.toString());
     
     try {
-      let apiUrl = "http://localhost:5000/properties?";
+      let apiUrl = "https://habito-rzwt.onrender.com/properties?";
       if (params.location) apiUrl = apiUrl + "location=" + params.location + "&";
       if (params.minPrice) apiUrl = apiUrl + "minPrice=" + params.minPrice + "&";
       if (params.maxPrice) apiUrl = apiUrl + "maxPrice=" + params.maxPrice + "&";
@@ -272,7 +272,7 @@ const PropertiesPage = () => {
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const favRes = await fetch("http://localhost:5000/user/getUserFavourite", { 
+          const favRes = await fetch("https://habito-rzwt.onrender.com/user/getUserFavourite", { 
             headers: { Authorization: "Bearer " + token } 
           });
           if (favRes.ok) {
@@ -320,7 +320,7 @@ const PropertiesPage = () => {
     try {
       if (isFav) {
         await axios.delete(
-          "http://localhost:5000/user/removeUserFavourite/" + propertyId,
+          "https://habito-rzwt.onrender.com/user/removeUserFavourite/" + propertyId,
           {
             headers: { Authorization: "Bearer " + token },
           }
@@ -328,7 +328,7 @@ const PropertiesPage = () => {
         console.log("Removed from favorites");
       } else {
         await axios.post(
-          "http://localhost:5000/user/addUserFavourite",
+          "https://habito-rzwt.onrender.com/user/addUserFavourite",
           { propertyId: propertyId },
           {
             headers: {
