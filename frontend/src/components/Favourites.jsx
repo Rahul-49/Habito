@@ -18,7 +18,7 @@ const Favourites = () => {
     const fetchFavorites = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch("http://localhost:5000/user/getUserFavourite"
+        const res = await fetch("https://habito-rzwt.onrender.com/user/getUserFavourite"
         , {
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -51,7 +51,7 @@ const Favourites = () => {
   const removeFavorite = async (propertyId) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:5000/user/removeUserFavourite/${propertyId}`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/user/removeUserFavourite/${propertyId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
