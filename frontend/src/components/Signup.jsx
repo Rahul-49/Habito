@@ -18,7 +18,7 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/auth/register", {
+      const response = await axios.post("https://habito-rzwt.onrender.com/auth/register", {
         name,
         email,
         password,
@@ -94,7 +94,7 @@ const Signup = () => {
 
               <div className="login-center-buttons">
                 <button type="button" onClick={handleSignup}>Sign Up</button>
-                <button type="button" onClick={() => { window.location.href = "http://localhost:5000/auth/google"; }}>
+                <button type="button" onClick={() => { window.location.href = "https://habito-rzwt.onrender.com/auth/google"; }}>
                   <img src={GoogleSvg} alt="" />
                   Sign Up with Google
                 </button>
