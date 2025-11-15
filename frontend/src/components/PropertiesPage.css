@@ -1,0 +1,60 @@
+/* Properties page scoped styles */
+
+.properties-page {
+  height: 100vh;
+}
+
+.properties-sidebar {
+  width: 250px;
+  height: 100vh;
+  z-index: 1050;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+
+.properties-overlay {
+  z-index: 1040;
+}
+
+/* On large screens, push main content to the right of the sidebar */
+@media (min-width: 992px) {
+  .properties-main {
+    margin-left: 250px;
+  }
+}
+
+.properties-search-wrap {
+  max-width: 800px;
+}
+
+.properties-main {
+  margin-left: 0;
+  transition: margin-left 0.2s ease;
+}
+
+.properties-content {
+  background-color: #f8f9fa;
+}
+
+.property-card-hero {
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.property-hero-icon {
+  opacity: 0.3;
+}
+
+/* Utility used in sidebar links */
+.hover-bg-secondary:hover {
+  background-color: rgba(108, 117, 125, 0.3) !important;
+}
+
+/* Text clamp helper */
+.line-clamp-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
