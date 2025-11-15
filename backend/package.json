@@ -21,6 +21,6 @@
     "multer": "^2.0.2",
     "multer-storage-cloudinary": "^4.0.0",
     "node-fetch": "^2.7.0",
-    "openai": "^6.9.0"
+    "express-session": "^1.17.3"
   }
 }
