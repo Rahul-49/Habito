@@ -33,8 +33,8 @@ const Profile = () => {
         };
 
         const [propertiesRes, favoritesRes] = await Promise.all([
-          fetch("http://localhost:5000/user/getUserProperties", { headers }),
-          fetch("http://localhost:5000/user/getUserFavourite", { headers })
+          fetch("https://habito-rzwt.onrender.com/user/getUserProperties", { headers }),
+          fetch("https://habito-rzwt.onrender.com/user/getUserFavourite", { headers })
         ]);
 
         if (propertiesRes.ok) {
