@@ -23,7 +23,7 @@ const AdminIssues = () => {
       const params = new URLSearchParams();
       if (filters.status) params.set("status", filters.status);
       if (filters.category) params.set("category", filters.category);
-      const res = await fetch(`http://localhost:5000/issues?${params.toString()}`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/issues?${params.toString()}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch issues");
@@ -362,7 +362,7 @@ const AdminIssues = () => {
     try {
       setUpdating(id + ":status");
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/issues/${id}/status`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/issues/${id}/status`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -386,7 +386,7 @@ const AdminIssues = () => {
     try {
       setUpdating(id + ":note");
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/issues/${id}/notes`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/issues/${id}/notes`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
