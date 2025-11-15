@@ -17,7 +17,7 @@ const MyIssues = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/issues/mine", {
+      const res = await fetch("https://habito-rzwt.onrender.com/issues/mine", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch my issues");
@@ -271,7 +271,7 @@ const MyIssues = () => {
     try {
       setUpdating(id + ":note");
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/issues/${id}/notes`, {
+      const res = await fetch(`https://habito-rzwt.onrender.com/issues/${id}/notes`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
